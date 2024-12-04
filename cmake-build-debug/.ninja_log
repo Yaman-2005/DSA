@@ -1,0 +1,6 @@
+# ninja log v6
+53	505	1724824604212521497	CMakeFiles/untitled1.dir/main.c.o	ffb1bb06d619c5bb
+32	53	1718003562203206383	untitled1	80f36826a1f8d590
+57	502	1724824604216521448	CMakeFiles/untitled1.dir/linkedlist.c.o	b32dc726d27c6ed8
+58	504	1724824604217521436	CMakeFiles/untitled1.dir/stack.c.o	6b30be1184280e0c
+503	552	1724824604663516001	CMakeFiles/untitled1.dir/queue.c.o	b5c8273c103f360c
