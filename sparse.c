@@ -56,6 +56,38 @@ void transpose(struct ele sparse[],struct ele trans[]) {
         }
     }
 }
+void add(struct ele sparse1[], struct ele sparse2[],struct ele result[]) {
+    if(sparse1[0].row != sparse2[0].row || sparse1[0].col != sparse2[0].col) {
+        printf("Addition not possible");
+        return;
+    }
+    int k = 1,i,j;
+    result[0].row = sparse1[0].row;
+    result[0].col = sparse2[0].col;
+    for(i=1;i<=sparse1[0].value;i++) {
+        if(sparse1[i].row == sparse2[i].row && sparse1[i].col == sparse2[i].col) {
+            result[k].row = sparse1[i].row;
+            result[k].col = sparse2[i].col;
+            result[k].value = sparse1[i].value + sparse2[i].value;
+            k++;
+        }
+    }
+    printf("%d\n",k);
+    int f = i;
+    for(i=f-1;i<=sparse2[0].value;i++,k++) {
+        result[k].row = sparse2[i].row;
+        result[k].col = sparse2[i].col;
+        result[k].value = sparse2[i].value;
+    }
+    printf("%d\n",k);
+    for(i=f-1;i<=sparse1[0].value;i++,k++) {
+        result[k].row = sparse1[i].row;
+        result[k].col = sparse1[i].col;
+        result[k].value = sparse1[i].value;
+    }
+    printf("%d\n",k);
+    result[0].value = k-1;
+}
 int main() {
     int m,n;
     struct ele sparse[1000],trans[1000];

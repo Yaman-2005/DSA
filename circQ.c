@@ -38,17 +38,23 @@ int delete(int* queue,int *front,int *rear,int *item) {
     return true;
 }
 void print(int* queue,int front,int rear) {
-    int i;
-    if(front==-1) return;
-    if(rear >= front) {
-        for(i = front; i <= rear;i++) {
-            printf("%d",queue[i]);
-        }
+    if (front == -1)
+    {
+        printf("\nQueue is Empty");
+        return;
     }
-    else {
-        for(i = 0;i < MAX;i++) {
-            printf("%d",queue[i]);
-        }
+    if (rear >= front)
+    {
+        for (int i = front; i <= rear; i++)
+            printf("%d ",queue[i]);
+    }
+    else
+    {
+        for (int i = front; i < MAX; i++)
+            printf("%d ", queue[i]);
+
+        for (int i = 0; i <= rear; i++)
+            printf("%d ", queue[i]);
     }
 }
 int main() {
